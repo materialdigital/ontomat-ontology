@@ -1,0 +1,370 @@
+@prefix : <https://www.materialdigital.de/ontomat/> .
+@prefix lis: <http://rds.posccaesar.org/ontology/lis14/rdl/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ontomat: <https://www.materialdigital.de/ontomat/> .
+@prefix ontoins: <https://www.materialdigital.de/ontomat/instance/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@base <https://www.materialdigital.de/ontomat/> .
+
+<https://www.materialdigital.de/ontomat/epoxy_m_ly556_gfk_ud> rdf:type owl:Ontology ;
+                                        dcterms:creator "Patrick Schneider" , "Niklas-Alexander Toffert", "Martin Koerdel"  ;
+                                        dcterms:created "2025-05-01"^^xsd:date  .
+
+
+ontoins:glassFiber rdf:type owl:NamedIndividual , ontomat:Glass ;
+   rdfs:label "Generic glas fiber" .
+
+ontoins:carbonFiber rdf:type owl:NamedIndividual , ontomat:Graphite ;
+    rdfs:label "Generic carbon fiber" .
+
+ontoins:kilogram-per-cubic-m rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$\\dfrac{kg}{m^3}$".
+
+ontoins:gram-per-cubic-cm rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$\\dfrac{g}{cm^3}$".
+
+ontoins:kilogram-per-cubic-m rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$\\dfrac{kg}{m^3}$".
+
+ontoins:gram-per-cubic-cm-at-20degrees  rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$\\dfrac{g}{cm^3}$ at 20°C".
+
+ontoins:gram-per-10min rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$\\dfrac{g}{10min}$".
+
+ontoins:gram-per-10min rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$\\dfrac{g}{10min}$".
+
+ontoins:megapascals rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$Mpa$".
+
+ontoins:percentage rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+  rdfs:label "$%$".
+
+### Epoxy GFK UD - material and products
+ontoins:epoxy-M_LY556_GFKUD0_01  rdf:type owl:NamedIndividual, ontomat:CompositeMaterial ;
+       rdfs:label "Siemens Epoxy GFK UD" ;
+       ontomat:manufacturedBy "Siemens Technology" ;
+       ontomat:hasMatrixWith  ontoins:araldite_LY_556 ;
+       ontomat:reinforcedWith ontoins:acrystal_L_4040_BB  ;
+       ontomat:hasMaterialQuality ontoins:epoxy-M_LY556_GFKUD0_01-v12, ontoins:epoxy-M_LY556_GFKUD0_01-v13, ontoins:epoxy-M_LY556_GFKUD0_01-v23, 
+        ontoins:epoxy-M_LY556_GFKUD0_01-density, ontoins:epoxy-M_LY556_GFKUD0_01-fvc, ontoins:epoxy-M_LY556_GFKUD0_01-e11, ontoins:epoxy-M_LY556_GFKUD0_01-e22, 
+      ontoins:epoxy-M_LY556_GFKUD0_01-e33, ontoins:epoxy-M_LY556_GFKUD0_01-g12, ontoins:epoxy-M_LY556_GFKUD0_01-g31, ontoins:epoxy-M_LY556_GFKUD0_01-g23, ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-fiber,
+      ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-fiber-opposite, ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-fiber, ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-fiber-opposite, 
+      ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength   .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-final-product rdf:type owl:NamedIndividual, ontomat:FinalProduct ;
+    rdfs:label "Epoxy GFK UD final product" ;
+    ontomat:hasMaterial ontoins:epoxy-M_LY556_GFKUD0_01 ;
+    # ontomat:hasProductQuality ;
+    lis:representedIn ontoins:epoxy-M_LY556_GFKUD0_01-final-product-geo .    
+
+ontoins:epoxy-M_LY556_GFKUD0_01-final-product-geo rdf:type geo:Geometry, lis:InformationObject ;
+    ontomat:path "/home/products/epoxy-M_LY556_GFKUD0_01/geometry.step".
+#  geo:asWKT "POLYGON((0 0, 0 8, 8 8, 8 0, 0 0))" . 
+
+
+ontoins:epoxy-M_LY556_GFKUD0_01-product-1 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Epoxy GFK UD mixed product" ;
+    ontomat:hasMaterial ontoins:epoxy-M_LY556_GFKUD0_01  . 
+
+ontoins:epoxy-M_LY556_GFKUD0_01-product-2 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Epoxy GFK UD cured product" ;
+    ontomat:hasMaterial ontoins:epoxy-M_LY556_GFKUD0_01  . 
+
+ontoins:epoxy-M_LY556_GFKUD0_01-product-3 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Epoxy GFK UD hot raw product" ;
+    ontomat:hasMaterial ontoins:epoxy-M_LY556_GFKUD0_01 . 
+
+ontoins:epoxy-M_LY556_GFKUD0_01-product-4 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Epoxy GFK UD cooled raw product" ;
+    ontomat:hasMaterial ontoins:epoxy-M_LY556_GFKUD0_01 . 
+
+
+## Epoxy GFK UD - properties
+ontoins:epoxy-M_LY556_GFKUD0_01-density rdf:type owl:NamedIndividual, ontomat:Density ;
+  rdfs:label "Density" ;
+  lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-density-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-density-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "1.79" ;
+    ontomat:standardDeviation "0.01"^^xsd:decimal ;
+    lis:datumUOM ontoins:kilogram-per-cubic-m .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-fvc rdf:type owl:NamedIndividual, ontomat:FiberMaterialContentVolume;  # FiberVolumeContent
+    rdfs:label "Fiber material content volume" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-fvc-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-fvc-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "50.3" ;
+    ontomat:standardDeviation "1.5"^^xsd:decimal .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-e11 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE11 ;
+    rdfs:label "Elastic modulus 11" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-e11-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-e11-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "38688" ;
+    ontomat:standardDeviation "3150.0"^^xsd:decimal ;
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-e22 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE22 ;
+    rdfs:label "Elastic modulus 22" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-e22-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-e22-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "11100" ;
+    ontomat:standardDeviation "361.0"^^xsd:decimal ;    
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-e33 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE33 ;
+    rdfs:label "Elastic modulus 33" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-e33-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-e33-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "11100" ;
+    ontomat:standardDeviation "361.0"^^xsd:decimal ;        
+    lis:datumUOM ontoins:megapascals .  
+
+ontoins:epoxy-M_LY556_GFKUD0_01-g12 rdf:type owl:NamedIndividual, ontomat:ShearModulusG12 ;
+    rdfs:label "Shear modulus G12" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-g12-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-g12-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "4573" ;
+    ontomat:standardDeviation "239.0"^^xsd:decimal ;
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-g13 rdf:type owl:NamedIndividual, ontomat:ShearModulusG13 ;
+    rdfs:label "Shear modulus G13" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-g13-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-g13-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    rdfs:comment "Derived from Shea modulus 12" ;
+    lis:datumValue "4573" ;
+    ontomat:standardDeviation "239.0"^^xsd:decimal ;
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-g23 rdf:type owl:NamedIndividual, ontomat:ShearModulusG23 ;
+    rdfs:label "Shear modulus G23" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-g23-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-g23-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum ;
+    lis:datumValue "3840" ;
+    lis:datumUOM ontoins:megapascals . # Or should we directly point to QUDT
+
+ontoins:epoxy-M_LY556_GFKUD0_01-v12 rdf:type owl:NamedIndividual, ontomat:PoissonsRatioV12 ;
+    rdfs:label "Poisson's ratio V12" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-v12-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-v12-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
+    lis:datumValue "0.3" .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-v13 rdf:type owl:NamedIndividual, ontomat:PoissonsRatioV13 ;
+    rdfs:label "Poisson's ratio V13" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-v13-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-v13-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
+    lis:datumValue "0.3" .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-v23 rdf:type owl:NamedIndividual, ontomat:PoissonsRatioV23 ;
+    rdfs:label "Poisson's ratio V23" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-v23-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-v23-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
+    lis:datumValue "0.4" .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x1 rdf:type owl:NamedIndividual, ontomat:TensileStrengthInX1 ;
+    rdfs:label "Tensile strength in X1" ;
+    lis:qualityQuantifiedAs ontoins:fgf-Carbon-P_01-tensile-strength-x1-val1 .    
+ontoins:fgf-Carbon-P_01-tensile-strength-x1-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "800" ;
+    ontomat:standardDeviation "30.0"^^xsd:decimal ;
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x2 rdf:type owl:NamedIndividual, ontomat:TensileStrengthInX2 ;
+    rdfs:label "Tensile strength in X2" ;
+    lis:qualityQuantifiedAs ontoins:fgf-Carbon-P_01-tensile-strength-x2-val1 .    
+ontoins:fgf-Carbon-P_01-tensile-strength-x2-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "35" ;
+    ontomat:standardDeviation "2.0"^^xsd:decimal ;
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x1 rdf:type owl:NamedIndividual, ontomat:CompressionStrengthInX1 ;
+    rdfs:label "Compressive strength at fiber direction" ;
+    lis:qualityQuantifiedAs ontoins:fgf-Carbon-P_01-compressive-strength-x1-val1 .    
+ontoins:fgf-Carbon-P_01-compressive-strength-x1-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "-634" ;
+    ontomat:standardDeviation "41.0"^^xsd:decimal ;
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x2 rdf:type owl:NamedIndividual, ontomat:CompressionStrengthInX2 ;
+    rdfs:label "Compressive strength at opposite fiber direction" ;
+    lis:qualityQuantifiedAs ontoins:fgf-Carbon-P_01-compressive-strength-x2-val1 .    
+ontoins:fgf-Carbon-P_01-compressive-strength-x2-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "-142" ;
+    ontomat:standardDeviation "13.0"^^xsd:decimal ;
+    lis:datumUOM ontoins:megapascals .
+
+ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength rdf:type owl:NamedIndividual, ontomat:ShearStrengthX1X2Plane ;
+    rdfs:label "Shear strength in x1-x2-plane" ;
+    lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "63" ;
+    ontomat:standardDeviation "2.0"^^xsd:decimal .
+
+### Araldite LY 556 - material and products
+ontoins:araldite_LY_556 rdf:type owl:NamedIndividual, ontomat:EpoxyResin  ;
+    rdfs:label "Araldite LY 556" ;
+    rdfs:comment "Araldite LY 556 is an epoxy resin for high performance composite parts " ;
+    ontomat:manufacturedBy "Huntsman Corporation"  .
+
+ontoins:araldite_LY_556-product-1 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Araldite LY 556 raw product" ;
+     ontomat:hasMaterial ontoins:araldite_LY_556 .   
+
+ontoins:araldite_LY_556-product-2 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Araldite LY 556 compressed product" ;
+     ontomat:hasMaterial ontoins:araldite_LY_556 .
+
+### Aradur HY 906 with Accelerator DY 070 - materials and products
+ontoins:aradur-HY-906 rdf:type owl:NamedIndividual, ontomat:AceticAnhydride ;
+    rdfs:label "Aradur HY 906" ;
+    skos:definition "A nadic methyl anhydride that acts as a curing agent" ;
+    ontomat:manufacturedBy "Huntsman Corporation" ;
+    ontomat:appliedTo ontoins:araldite_LY_556 .
+
+ontoins:accelerator-DY-070  rdf:type owl:NamedIndividual, ontomat:LiquidMixture ;
+    rdfs:label "Accelerator DY 070" ;
+    skos:definition "Accelerator for epoxy resin hardening" ;
+    ontomat:manufacturedBy "Huntsman Corporation" ;
+    ontomat:appliedTo ontoins:araldite_LY_556 .
+
+## UNIE-640 - material and products
+ontoins:UNIE-640  rdf:type owl:NamedIndividual, ontomat:CompositeMaterial ;
+    rdfs:label "UNIE-640" ;
+    rdfs:comment "Glass fiber fabric" ;
+    ontomat:manufacturedBy "Lange+Ritter GmbH" ;
+    ontomat:reinforcedWith ontoins:glassFiber ;
+    ontomat:hasMaterialQuality ontoins:acrystal_L_4040_BB-density.
+
+ontoins:acrystal_L_4040_BB-product-1 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Acrystal L-4040-BB raw fabric product" ;
+     ontomat:hasMaterial ontoins:acrystal_L_4040_BB .
+
+ontoins:acrystal_L_4040_BB-product-2 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Acrystal L-4040-BB cut product" ;
+    ontomat:hasMaterial ontoins:acrystal_L_4040_BB .
+
+ontoins:acrystal_L_4040_BB-product-3 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Acrystal L-4040-BB draped product" ;
+     ontomat:hasMaterial ontoins:acrystal_L_4040_BB .
+
+ontoins:acrystal_L_4040_BB-product-4 rdf:type owl:NamedIndividual, ontomat:IntermediateProduct ;
+    rdfs:label "Acrystal L-4040-BB draped product in mold" ;
+     ontomat:hasMaterial ontoins:acrystal_L_4040_BB .
+
+## Acrystal L-4040-BB properties
+ontoins:acrystal_L_4040_BB-density rdf:type owl:NamedIndividual, ontomat:Density ;
+    lis:qualityQuantifiedAs ontoins:acrystal_L_4040_BB-density-val1 .
+ontoins:acrystal_L_4040_BB-density-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
+    lis:datumValue "2.6" ;
+    lis:datumUOM ontoins:gram-per-cubic-cm-at-20degrees .
+
+## Material forming process
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-Main rdf:type owl:NamedIndividual, ontomat:MaterialFormingProcess;
+        rdfs:label "Epoxy GFK UD Process" ;
+        ontomat:hasOperator ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO01, ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO02, 
+            ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO03, ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO04, ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO05, 
+            ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO06, ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO07, ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO08,
+            ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO09 ;
+        ontomat:hasInputProduct ontoins:araldite_LY_556-product-1, ontoins:acrystal_L_4040_BB-product-1 ;
+        ontomat:hasOutputProduct ontoins:epoxy-M_LY556_GFKUD0_01-final-product .
+# Currently only input/output process steps, maybe add all
+
+## Material forming process - left branch
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO01 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for compressing" ;
+        ontomat:hasInputProduct ontoins:araldite_LY_556-product-1 ;
+        ontomat:hasOutputProduct ontoins:araldite_LY_556-product-2 ;
+        ontomat:producedBy ontoins:pressure_vessel-asset-01 ;
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO05.
+
+ontoins:pressure_vessel-asset-01 rdf:type owl:NamedIndividual, ontomat:PreparationStation ;
+        rdfs:label "Pressure vessel" .
+
+## Material forming process - right branch
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO02 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for cutting" ;
+        ontomat:hasInputProduct ontoins:acrystal_L_4040_BB-product-1 ;
+        ontomat:hasOutputProduct  ontoins:acrystal_L_4040_BB-product-2 ;
+        ontomat:producedBy ontoins:fabric-preparation-asset-01 ;
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO03 .
+
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO03 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for draping" ;
+        ontomat:hasInputProduct ontoins:acrystal_L_4040_BB-product-2 ;
+        ontomat:hasOutputProduct  ontoins:acrystal_L_4040_BB-product-3 ;
+        ontomat:producedBy ontoins:fabric-preparation-asset-01 ;
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO04 .
+
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO04 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for molding (includes heating and closing)" ;
+        ontomat:hasInputProduct ontoins:acrystal_L_4040_BB-product-3 ;
+        ontomat:hasOutputProduct  ontoins:acrystal_L_4040_BB-product-4 ;
+        ontomat:producedBy ontoins:molding-heating-asset-01, ontoins:molding-closing-asset-01 ;
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO05 .
+
+# This process could be unfolded to lower level
+
+ontoins:fabric-preparation-asset-01 rdf:type owl:NamedIndividual, ontomat:Robot ;
+        rdfs:label "Fabric preparation robot unit" .
+
+ontoins:molding-heating-asset-01 rdf:type owl:NamedIndividual, ontomat:MoldingStation ;
+        rdfs:label "Molding heating unit" .
+
+ontoins:molding-closing-asset-01 rdf:type owl:NamedIndividual, ontomat:MoldingStation ;
+        rdfs:label "Molding closing unit" .
+
+## Material forming process - merged branches
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO05 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for material injection" ;
+        ontomat:hasInputProduct ontoins:acrystal_L_4040_BB-product-4, ontoins:araldite_LY_556-product-2 ;
+        ontomat:hasOutputProduct  ontoins:epoxy-M_LY556_GFKUD0_01-product-1 ;
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO06 .
+
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO06 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for mixed product consolidation" ;
+        ontomat:hasInputProduct ontoins:epoxy-M_LY556_GFKUD0_01-product-1 ;
+        ontomat:hasOutputProduct ontoins:epoxy-M_LY556_GFKUD0_01-product-2 ;
+        ontomat:producedBy ontoins:molding-consolidation-asset-01 ;
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO07 .
+
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO07 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for cured product ejection" ;
+        ontomat:hasInputProduct ontoins:epoxy-M_LY556_GFKUD0_01-product-2 ;
+        ontomat:hasOutputProduct ontoins:epoxy-M_LY556_GFKUD0_01-product-3 ;
+        ontomat:producedBy ontoins:ejector-asset-01 ;        
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO08 .
+
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO08 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for cooling transport" ;
+        ontomat:hasInputProduct ontoins:epoxy-M_LY556_GFKUD0_01-product-3 ;
+        ontomat:hasOutputProduct ontoins:epoxy-M_LY556_GFKUD0_01-product-4 ;
+        ontomat:producedBy ontoins:part-handling-asset-01 ;   
+        ontomat:next ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO09 .        
+
+ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-PO09 rdf:type owl:NamedIndividual, ontomat:VDIProcessOperator ;
+        rdfs:label "Epoxy GFK UD process for Finishing and Milling" ;
+        ontomat:hasInputProduct ontoins:epoxy-M_LY556_GFKUD0_01-product-4 ;
+        ontomat:hasOutputProduct ontoins:epoxy-M_LY556_GFKUD0_01-final-product ; # This is the final product              
+        ontomat:producedBy ontoins:cutting-milling-asset-01 .
+
+ontoins:molding-consolidation-asset-01 rdf:type owl:NamedIndividual, ontomat:MoldingStation ;
+        rdfs:label "Molding consolidation unit XYZ" .
+      
+ontoins:ejector-asset-01 rdf:type owl:NamedIndividual, ontomat:PreparationStation ;
+        rdfs:label "Ejector unit XYZ" .
+
+ontoins:part-handling-asset-01 rdf:type owl:NamedIndividual, ontomat:Robot ;
+        rdfs:label "Automated part handling robot unit XYZ" .
+
+ontoins:cutting-milling-asset-01 rdf:type owl:NamedIndividual, ontomat:PreparationStation ;
+        rdfs:label "Cutting and milling unit XYZ" .
+
