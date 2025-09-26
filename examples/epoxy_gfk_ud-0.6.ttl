@@ -11,11 +11,14 @@
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix schema: <http://schema.org/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
 @base <https://www.materialdigital.de/ontomat/> .
 
 <https://www.materialdigital.de/ontomat/epoxy_m_ly556_gfk_ud> rdf:type owl:Ontology ;
-                                        dcterms:creator "Patrick Schneider" , "Niklas-Alexander Toffert", "Martin Koerdel"  ;
-                                        dcterms:created "2025-05-01"^^xsd:date  .
+                        owl:versionInfo "0.6.0" ;
+                        dcterms:creator "Patrick Schneider" , "Niklas-Alexander Toffert", "Martin Koerdel"  ;
+                        dcterms:created "2025-05-01"^^xsd:date  ;
+                        owl:imports <https://www.materialdigital.de/ontomat/ontology/0.6> .
 
 
 ontoins:glassFiber rdf:type owl:NamedIndividual , ontomat:Glass ;
@@ -24,29 +27,29 @@ ontoins:glassFiber rdf:type owl:NamedIndividual , ontomat:Glass ;
 ontoins:carbonFiber rdf:type owl:NamedIndividual , ontomat:Graphite ;
     rdfs:label "Generic carbon fiber" .
 
-ontoins:kilogram-per-cubic-m rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$\\dfrac{kg}{m^3}$".
+#ontoins:kilogram-per-cubic-m rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$\\dfrac{kg}{m^3}$".
 
-ontoins:gram-per-cubic-cm rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$\\dfrac{g}{cm^3}$".
+#ontoins:gram-per-cubic-cm rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$\\dfrac{g}{cm^3}$".
 
-ontoins:kilogram-per-cubic-m rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$\\dfrac{kg}{m^3}$".
+#ontoins:kilogram-per-cubic-m rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$\\dfrac{kg}{m^3}$".
 
-ontoins:gram-per-cubic-cm-at-20degrees  rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$\\dfrac{g}{cm^3}$ at 20°C".
+#ontoins:gram-per-cubic-cm-at-20degrees  rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$\\dfrac{g}{cm^3}$ at 20°C".
 
-ontoins:gram-per-10min rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$\\dfrac{g}{10min}$".
+#ontoins:gram-per-10min rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$\\dfrac{g}{10min}$".
 
-ontoins:gram-per-10min rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$\\dfrac{g}{10min}$".
+#ontoins:gram-per-10min rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$\\dfrac{g}{10min}$".
 
-ontoins:megapascals rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$Mpa$".
+#ontoins:megapascals rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$Mpa$".
 
-ontoins:percentage rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
-  rdfs:label "$%$".
+#ontoins:percentage rdf:type owl:NamedIndividual, lis:UnitOfMeasure;
+#  rdfs:label "$%$".
 
 ### Epoxy GFK UD - material and products
 ontoins:epoxy-M_LY556_GFKUD0_01  rdf:type owl:NamedIndividual, ontomat:CompositeMaterial ;
@@ -56,14 +59,14 @@ ontoins:epoxy-M_LY556_GFKUD0_01  rdf:type owl:NamedIndividual, ontomat:Composite
        ontomat:reinforcedWith ontoins:acrystal_L_4040_BB  ;
        ontomat:hasMaterialQuality ontoins:epoxy-M_LY556_GFKUD0_01-v12, ontoins:epoxy-M_LY556_GFKUD0_01-v13, ontoins:epoxy-M_LY556_GFKUD0_01-v23, 
         ontoins:epoxy-M_LY556_GFKUD0_01-density, ontoins:epoxy-M_LY556_GFKUD0_01-fvc, ontoins:epoxy-M_LY556_GFKUD0_01-e11, ontoins:epoxy-M_LY556_GFKUD0_01-e22, 
-      ontoins:epoxy-M_LY556_GFKUD0_01-e33, ontoins:epoxy-M_LY556_GFKUD0_01-g12, ontoins:epoxy-M_LY556_GFKUD0_01-g31, ontoins:epoxy-M_LY556_GFKUD0_01-g23, ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-fiber,
-      ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-fiber-opposite, ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-fiber, ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-fiber-opposite, 
+      ontoins:epoxy-M_LY556_GFKUD0_01-e33, ontoins:epoxy-M_LY556_GFKUD0_01-g12, ontoins:epoxy-M_LY556_GFKUD0_01-g31, ontoins:epoxy-M_LY556_GFKUD0_01-g23, ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x1,
+      ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x2, ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x1, ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x2, 
       ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength   .
 
 ontoins:epoxy-M_LY556_GFKUD0_01-final-product rdf:type owl:NamedIndividual, ontomat:FinalProduct ;
     rdfs:label "Epoxy GFK UD final product" ;
     ontomat:hasMaterial ontoins:epoxy-M_LY556_GFKUD0_01 ;
-    # ontomat:hasProductQuality ;
+    ontomat:hasProductProperty ontoins:epoxy-M_LY556_GFKUD0_01-final-product-weight;
     lis:representedIn ontoins:epoxy-M_LY556_GFKUD0_01-final-product-geo .    
 
 ontoins:epoxy-M_LY556_GFKUD0_01-final-product-geo rdf:type geo:Geometry, lis:InformationObject ;
@@ -88,87 +91,99 @@ ontoins:epoxy-M_LY556_GFKUD0_01-product-4 rdf:type owl:NamedIndividual, ontomat:
     ontomat:hasMaterial ontoins:epoxy-M_LY556_GFKUD0_01 . 
 
 
-## Epoxy GFK UD - properties
+## Epoxy GFK UD - product properties
+ontoins:epoxy-M_LY556_GFKUD0_01-final-product-weight rdf:type owl:NamedIndividual, ontomat:ProductProperty ;
+  rdfs:label "Weight" ;
+  lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-final-product-weight-val1 .
+ontoins:epoxy-M_LY556_GFKUD0_01-final-product-weight-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
+    lis:datumValue "0.5" ;
+    lis:datumUOM unit:KiloGM .
+
+## Epoxy GFK UD - material properties
 ontoins:epoxy-M_LY556_GFKUD0_01-density rdf:type owl:NamedIndividual, ontomat:Density ;
   rdfs:label "Density" ;
   lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-density-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-density-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     lis:datumValue "1.79" ;
     ontomat:standardDeviation "0.01"^^xsd:decimal ;
-    lis:datumUOM ontoins:kilogram-per-cubic-m .
+    lis:datumUOM unit:KiloGM-PER-M3 .
 
-ontoins:epoxy-M_LY556_GFKUD0_01-fvc rdf:type owl:NamedIndividual, ontomat:FiberMaterialContentVolume;  # FiberVolumeContent
+ontoins:epoxy-M_LY556_GFKUD0_01-fvc rdf:type owl:NamedIndividual, ontomat:FiberMaterialContentMass;  # FiberVolumeContent
     rdfs:label "Fiber material content volume" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-fvc-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-fvc-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     lis:datumValue "50.3" ;
-    ontomat:standardDeviation "1.5"^^xsd:decimal .
+    ontomat:standardDeviation "1.5"^^xsd:decimal ;
+    lis:datumUOM unit:PERCENT .
 
-ontoins:epoxy-M_LY556_GFKUD0_01-e11 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE11 ;
+ontoins:epoxy-M_LY556_GFKUD0_01-e11 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE1 ;
     rdfs:label "Elastic modulus 11" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-e11-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-e11-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
-    lis:datumValue "38688" ;
-    ontomat:standardDeviation "3150.0"^^xsd:decimal ;
-    lis:datumUOM ontoins:megapascals .
+    lis:datumValue "38.688" ;
+    ontomat:standardDeviation "3.15"^^xsd:decimal ;
+    lis:datumUOM unit:GigaPA .
 
-ontoins:epoxy-M_LY556_GFKUD0_01-e22 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE22 ;
+ontoins:epoxy-M_LY556_GFKUD0_01-e22 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE2 ;
     rdfs:label "Elastic modulus 22" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-e22-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-e22-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
-    lis:datumValue "11100" ;
-    ontomat:standardDeviation "361.0"^^xsd:decimal ;    
-    lis:datumUOM ontoins:megapascals .
+    lis:datumValue "11.100" ;
+    ontomat:standardDeviation "3.61"^^xsd:decimal ;    
+    lis:datumUOM unit:GigaPA .
 
-ontoins:epoxy-M_LY556_GFKUD0_01-e33 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE33 ;
+ontoins:epoxy-M_LY556_GFKUD0_01-e33 rdf:type owl:NamedIndividual, ontomat:ElasticModulusE3 ;
     rdfs:label "Elastic modulus 33" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-e33-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-e33-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
-    lis:datumValue "11100" ;
-    ontomat:standardDeviation "361.0"^^xsd:decimal ;        
-    lis:datumUOM ontoins:megapascals .  
+    lis:datumValue "11.100" ;
+    ontomat:standardDeviation "3.61"^^xsd:decimal ;        
+    lis:datumUOM unit:GigaPA .  
 
 ontoins:epoxy-M_LY556_GFKUD0_01-g12 rdf:type owl:NamedIndividual, ontomat:ShearModulusG12 ;
     rdfs:label "Shear modulus G12" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-g12-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-g12-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
-    lis:datumValue "4573" ;
-    ontomat:standardDeviation "239.0"^^xsd:decimal ;
-    lis:datumUOM ontoins:megapascals .
+    lis:datumValue "4.573" ;
+    ontomat:standardDeviation "0.239"^^xsd:decimal ;
+    lis:datumUOM unit:GigaPA .
 
 ontoins:epoxy-M_LY556_GFKUD0_01-g13 rdf:type owl:NamedIndividual, ontomat:ShearModulusG13 ;
     rdfs:label "Shear modulus G13" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-g13-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-g13-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     rdfs:comment "Derived from Shea modulus 12" ;
-    lis:datumValue "4573" ;
-    ontomat:standardDeviation "239.0"^^xsd:decimal ;
-    lis:datumUOM ontoins:megapascals .
+    lis:datumValue "4.573" ;
+    ontomat:standardDeviation "0.239"^^xsd:decimal ;
+    lis:datumUOM unit:GigaPA .
 
 ontoins:epoxy-M_LY556_GFKUD0_01-g23 rdf:type owl:NamedIndividual, ontomat:ShearModulusG23 ;
     rdfs:label "Shear modulus G23" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-g23-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-g23-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum ;
-    lis:datumValue "3840" ;
-    lis:datumUOM ontoins:megapascals . # Or should we directly point to QUDT
+    lis:datumValue "3.840" ;
+    lis:datumUOM unit:GigaPA . 
 
 ontoins:epoxy-M_LY556_GFKUD0_01-v12 rdf:type owl:NamedIndividual, ontomat:PoissonsRatioV12 ;
     rdfs:label "Poisson's ratio V12" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-v12-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-v12-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
-    lis:datumValue "0.3" .
+    lis:datumValue "0.3" ;
+    lis:datumUOM unit:UNITLESS . 
 
 ontoins:epoxy-M_LY556_GFKUD0_01-v13 rdf:type owl:NamedIndividual, ontomat:PoissonsRatioV13 ;
     rdfs:label "Poisson's ratio V13" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-v13-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-v13-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
-    lis:datumValue "0.3" .
+    lis:datumValue "0.3" ;
+    lis:datumUOM unit:UNITLESS . 
 
 ontoins:epoxy-M_LY556_GFKUD0_01-v23 rdf:type owl:NamedIndividual, ontomat:PoissonsRatioV23 ;
     rdfs:label "Poisson's ratio V23" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-v23-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-v23-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
-    lis:datumValue "0.4" .
+    lis:datumValue "0.4" ;
+    lis:datumUOM unit:UNITLESS . 
 
 ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x1 rdf:type owl:NamedIndividual, ontomat:TensileStrengthInX1 ;
     rdfs:label "Tensile strength in X1" ;
@@ -176,7 +191,7 @@ ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x1 rdf:type owl:NamedIndividual
 ontoins:fgf-Carbon-P_01-tensile-strength-x1-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     lis:datumValue "800" ;
     ontomat:standardDeviation "30.0"^^xsd:decimal ;
-    lis:datumUOM ontoins:megapascals .
+    lis:datumUOM unit:MegaPA .
 
 ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x2 rdf:type owl:NamedIndividual, ontomat:TensileStrengthInX2 ;
     rdfs:label "Tensile strength in X2" ;
@@ -184,7 +199,7 @@ ontoins:epoxy-M_LY556_GFKUD0_01-tensile-strength-x2 rdf:type owl:NamedIndividual
 ontoins:fgf-Carbon-P_01-tensile-strength-x2-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     lis:datumValue "35" ;
     ontomat:standardDeviation "2.0"^^xsd:decimal ;
-    lis:datumUOM ontoins:megapascals .
+    lis:datumUOM unit:MegaPA .
 
 ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x1 rdf:type owl:NamedIndividual, ontomat:CompressionStrengthInX1 ;
     rdfs:label "Compressive strength at fiber direction" ;
@@ -192,7 +207,7 @@ ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x1 rdf:type owl:NamedIndivi
 ontoins:fgf-Carbon-P_01-compressive-strength-x1-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     lis:datumValue "-634" ;
     ontomat:standardDeviation "41.0"^^xsd:decimal ;
-    lis:datumUOM ontoins:megapascals .
+    lis:datumUOM unit:MegaPA .
 
 ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x2 rdf:type owl:NamedIndividual, ontomat:CompressionStrengthInX2 ;
     rdfs:label "Compressive strength at opposite fiber direction" ;
@@ -200,14 +215,15 @@ ontoins:epoxy-M_LY556_GFKUD0_01-compressive-strength-x2 rdf:type owl:NamedIndivi
 ontoins:fgf-Carbon-P_01-compressive-strength-x2-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     lis:datumValue "-142" ;
     ontomat:standardDeviation "13.0"^^xsd:decimal ;
-    lis:datumUOM ontoins:megapascals .
+    lis:datumUOM unit:MegaPA .
 
 ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength rdf:type owl:NamedIndividual, ontomat:ShearStrengthX1X2Plane ;
     rdfs:label "Shear strength in x1-x2-plane" ;
     lis:qualityQuantifiedAs ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength-val1 .
 ontoins:epoxy-M_LY556_GFKUD0_01-shear-strength-val1 rdf:type owl:NamedIndividual, ontomat:MeasuredQuantityDatum  ;
     lis:datumValue "63" ;
-    ontomat:standardDeviation "2.0"^^xsd:decimal .
+    ontomat:standardDeviation "2.0"^^xsd:decimal ;
+    lis:datumUOM unit:MegaPA .
 
 ### Araldite LY 556 - material and products
 ontoins:araldite_LY_556 rdf:type owl:NamedIndividual, ontomat:EpoxyResin  ;
@@ -236,8 +252,8 @@ ontoins:accelerator-DY-070  rdf:type owl:NamedIndividual, ontomat:LiquidMixture 
     ontomat:manufacturedBy "Huntsman Corporation" ;
     ontomat:appliedTo ontoins:araldite_LY_556 .
 
-## UNIE-640 - material and products
-ontoins:UNIE-640  rdf:type owl:NamedIndividual, ontomat:CompositeMaterial ;
+## UNIE-640 - material and products (acrystal_L_4040_BB)
+ontoins:acrystal_L_4040_BB  rdf:type owl:NamedIndividual, ontomat:CompositeMaterial ;
     rdfs:label "UNIE-640" ;
     rdfs:comment "Glass fiber fabric" ;
     ontomat:manufacturedBy "Lange+Ritter GmbH" ;
@@ -265,7 +281,7 @@ ontoins:acrystal_L_4040_BB-density rdf:type owl:NamedIndividual, ontomat:Density
     lis:qualityQuantifiedAs ontoins:acrystal_L_4040_BB-density-val1 .
 ontoins:acrystal_L_4040_BB-density-val1 rdf:type owl:NamedIndividual, ontomat:GivenQuantityDatum  ;
     lis:datumValue "2.6" ;
-    lis:datumUOM ontoins:gram-per-cubic-cm-at-20degrees .
+    lis:datumUOM unit:KiloGM-PER-M3 .
 
 ## Material forming process
 ontoins:epoxy-M_LY556_GFKUD0-MaterialForming-Main rdf:type owl:NamedIndividual, ontomat:MaterialFormingProcess;
